@@ -1,5 +1,5 @@
-import 'package:flu/model/product.dart';
-import 'package:flu/model/product_operations.dart';
+import 'package:firstapp/model/product.dart';
+import 'package:firstapp/model/product_operations.dart';
 import 'package:flutter/material.dart';
 
 class GrocApp extends StatelessWidget {
@@ -55,13 +55,20 @@ class GrocApp extends StatelessWidget {
       Widget productWidget = _getProduct(product.imageURL, product.label);
       return productWidget;
     }).toList();
-    int count = 0;
+
+    return Container(
+      margin: EdgeInsets.only(top: 10, left: 30),
+      child: Wrap(
+        children: productWidgets,
+      ),
+    );
+    /*int count = 0;
     List<Widget> threeProducts = [];
     List<Widget> rows = [];
     for (int i = 0; i < productWidgets.length; i++) {
       count++;
       threeProducts.add(productWidgets[i]);
-      if (count % 2 == 0) {
+      if (count % 3 == 0) {
         rows.add(Row(
             children: threeProducts,
             mainAxisAlignment: MainAxisAlignment.start));
@@ -80,6 +87,7 @@ class GrocApp extends StatelessWidget {
         //children: [_rowProducts(), _rowProducts(), _rowProducts()],
       ),
     );
+    */
   }
 
   @override
